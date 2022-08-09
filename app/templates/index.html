@@ -6,6 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=1, initial-scale=1.0">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+
+
     {% assets 'css' %}
     <link rel="stylesheet" href="{{ ASSET_URL }}">
     {% endassets %}
@@ -13,8 +19,140 @@
     <title>Home</title>
 </head>
 
-<body>
-    <h1 class="font-bold text-blue-400 text-center text-[9rem]">Flask template</h1>
+<body class="h-screen">
+    <nav class="m-5">
+        <div class="shadow-md mx-auto border rounded-md max-w-[90rem] flex justify-end p-5">
+            <div>
+                <div class="dropdown relative">
+                    <button class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <img src="/static/imgs/bell.png" class="h-10 w-10" />
+                    </button>
+                    <ul class="
+                  dropdown-menu
+                  min-w-max
+                  absolute
+                  bg-white
+                  text-base
+                  z-50
+                  float-left
+                  py-2
+                  list-none
+                  text-left
+                  rounded-lg
+                  shadow-lg
+                  mt-1
+                  hidden
+                  m-0
+                  bg-clip-padding
+                  border-none
+                " aria-labelledby="dropdownMenuButton1">
+                        <li>
+                            <a class="
+                      dropdown-item
+                      text-sm
+                      py-2
+                      px-4
+                      font-normal
+                      block
+                      w-full
+                      whitespace-nowrap
+                      bg-transparent
+                      text-gray-700
+                      hover:bg-gray-100
+                    " href="#">Action</a>
+                        </li>
+                        <li>
+                            <a class="
+                      dropdown-item
+                      text-sm
+                      py-2
+                      px-4
+                      font-normal
+                      block
+                      w-full
+                      whitespace-nowrap
+                      bg-transparent
+                      text-gray-700
+                      hover:bg-gray-100
+                    " href="#">Another action</a>
+                        </li>
+                        <li>
+                            <a class="
+                      dropdown-item
+                      text-sm
+                      py-2
+                      px-4
+                      font-normal
+                      block
+                      w-full
+                      whitespace-nowrap
+                      bg-transparent
+                      text-gray-700
+                      hover:bg-gray-100
+                    " href="#">Something else here</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-center">
+        </div>
+    </nav>
+
+
+    <div class="mx-8 sm:mx-14 mb-20">
+        <div class="mt-10 max-w-[90rem] mx-auto md:flex md:justify-between space-y-5 md:space-x-10 lg:space-x-20">
+            <div class="shadow-md p-10 w-full text-center border">
+                <h1 class="text-center text-gray-600 text-3xl font-semibold mb-10">LIGHT</h1>
+
+                <img id="myImage" src="/static/imgs/off.png" class="w-28 h-44 mx-auto" />
+
+                <button id="lightButton" onclick="lightToggle()"
+                    class="py-2 bg-gray-700 hover:bg-gray-800 hover:shadow-md text-white rounded-lg w-40 mt-12 md:mt-20">ON</button>
+            </div>
+
+            <div class="shadow-md p-10 w-full text-center border">
+                <h1 class="text-center text-gray-600 text-3xl font-semibold mb-10">FAN</h1>
+
+                <img id="fanImg" src="/static/imgs/fan.png" class="w-44 h-44 mx-auto" />
+
+                <button id="fanButton" onclick="fanToggle()"
+                    class="py-2 bg-gray-700 hover:bg-gray-800 hover:shadow-md text-white rounded-lg w-40 mt-12 md:mt-20">ON</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let state = false
+
+        function lightToggle() {
+            state = !state
+            if (state) {
+                pic = "/static/imgs/on.png"
+                document.getElementById('lightButton').innerText = "OFF"
+            } else {
+                pic = "/static/imgs/off.png"
+                document.getElementById('lightButton').innerText = "ON"
+            }
+            document.getElementById('myImage').src = pic;
+        }
+
+        let fan = false
+
+        function fanToggle() {
+            fan = !fan
+            let fanIm = document.getElementById('fanImg')
+            if (fan) {
+                fanIm.classList.add("animate-spin")
+                document.getElementById('fanButton').innerText = "OFF"
+            } else {
+                fanIm.classList.remove("animate-spin")
+                document.getElementById('fanButton').innerText = "ON"
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
 </body>
 
 </html>
