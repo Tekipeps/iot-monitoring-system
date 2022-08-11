@@ -11,7 +11,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
 
-
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.3/dist/echarts.min.js"></script>
     {% assets 'css' %}
     <link rel="stylesheet" href="{{ ASSET_URL }}">
     {% endassets %}
@@ -104,6 +104,11 @@
     <div class="mx-8 sm:mx-14 mb-20">
         <div class="mt-10 max-w-[90rem] mx-auto md:flex md:justify-between space-y-5 md:space-x-10 lg:space-x-20">
             <div class="shadow-md p-10 w-full text-center border">
+                <!-- Echart plugin -->
+                <div class="container">
+                    <div id="light-chart"></div>
+                </div>
+                <!--  -->
                 <h1 class="text-center text-gray-600 text-3xl font-semibold mb-10">LIGHT</h1>
 
                 <img id="myImage" src="/static/imgs/off.png" class="w-28 h-44 mx-auto" />
@@ -113,6 +118,11 @@
             </div>
 
             <div class="shadow-md p-10 w-full text-center border">
+                <!-- Echart plugin -->
+                <div class="container">
+                    <div id="fan-chart"></div>
+                </div>
+                <!--  -->
                 <h1 class="text-center text-gray-600 text-3xl font-semibold mb-10">FAN</h1>
 
                 <img id="fanImg" src="/static/imgs/fan.png" class="w-44 h-44 mx-auto" />
@@ -153,6 +163,7 @@
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+    <script src="/static/src/index.js"></script>
 </body>
 
 </html>

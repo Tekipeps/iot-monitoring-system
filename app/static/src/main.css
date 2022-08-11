@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#light-chart {
+  height: 350px;
+  width: 350px;
+}
+
+#fan-chart {
+  height: 350px;
+  width: 350px;
+}
